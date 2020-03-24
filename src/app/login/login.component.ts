@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
 
 // import { url } from 'inspector';
 
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   public passWord: string
   public loginBody: any
 
-  constructor(private httpclient: HttpClient, private http: HttpClient) { }
+  constructor(private httpclient: HttpClient, private http: HttpClient, private router : Router) { }
   ngOnInit() {
   }
 
@@ -38,6 +39,9 @@ export class LoginComponent implements OnInit {
     //   }
     // )
     console.log("Clicked On Login Button")
+    this.router.navigate(['/home'])
+    return true
+    // return this.router.navigate(['/home'])
   }
 
 }
