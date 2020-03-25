@@ -38,10 +38,12 @@ export class LoginComponent implements OnInit {
     //     console.log("data====>" + data)
     //   }
     // )
-    console.log("Clicked On Login Button")
-    this.router.navigate(['/home'])
-    return true
-    // return this.router.navigate(['/home'])
+    if (this.userName == "swati" && this.passWord == "swati"){
+      this.router.navigate(['/home'])
+    }
+    else{
+      alert("Invalid Credentials")
+    }
   }
 
 }
